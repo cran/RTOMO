@@ -1,9 +1,7 @@
 `PLOT.TOMOXSEC` <-
 function(XZSEC , depth=c(-25, 0) , COL=NULL, LIM=NULL, STA=NULL, ADD=FALSE)
   {
-    require(GEOmap)
-    require(RSEIS)
-
+    ##require(GEOmap)
     
     if(missing(COL)) { COL=tomo.colors(100) }
     if(missing(LIM)) { LIM=NULL }

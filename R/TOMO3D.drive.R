@@ -272,7 +272,9 @@ function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,STA=NULL, TOPO=NULL,  ST
                        TOPTRACE = list(x=topo.along[1:(length(topo.along)-1)], z = topo.trace)
                      }
                    print(paste(sep=" ", "x1=",x1,"; y1=",y1, "; x2=", x2, "; y2=",y2))
-                   X11()
+                   get(getOption("device"))()  
+
+                  
                    XSEC.drive(MOD, x1[jsec], y1[jsec], x2[jsec], y2[jsec] , zmax=zmax, COL=tomo.colors(100), LIM=LIM, STA=STA, TOP=TOPTRACE)
                  }
 
