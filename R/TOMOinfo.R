@@ -1,12 +1,13 @@
 `TOMOinfo` <-
-function(MOD)
+function(MOD, PLOT=FALSE)
 {
-
+if(missing(PLOT)) { PLOT=FALSE }
  newpar = NULL
  
  N = length(MOD$MOD)
 
  SLAY = NULL
+
  
   for( i in 1:N )
     {
@@ -40,7 +41,8 @@ function(MOD)
 
  OLAY = data.frame(SLAY)
  print(OLAY)
- 
+
+if(PLOT) { boxplot(MOD, varwidth =TRUE) }
  
   invisible(OLAY)
 }

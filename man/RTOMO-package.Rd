@@ -16,8 +16,8 @@ Plot and Interact with Tomographic Images
 \tabular{ll}{
 Package: \tab RTOMO\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2008-01-17\cr
+Version: \tab 1.0-3\cr
+Date: \tab 2008-02-07\cr
 License: \tab GPL\cr
 }
 Visualization for seismic tomography, includes:

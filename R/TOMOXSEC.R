@@ -26,7 +26,12 @@ function(MOD, x1, y1, x2, y2 , zmax=100, depth=c(-25, 0) , COL=rainbow(100), LIM
 
     if(!is.null(LIM))
       {
-        LAUGH[LAUGH<LIM[1]&LAUGH>LIM[2]] = NA
+
+        if(length(LIM)==2)
+          {
+            LAUGH[LAUGH<LIM[1]&LAUGH>LIM[2]] = NA
+          }
+      
       }
 
     along = sqrt( (IYZ$nodes$x-IYZ$nodes$x[1])^2+(IYZ$nodes$y-IYZ$nodes$y[1])^2)
@@ -38,7 +43,7 @@ function(MOD, x1, y1, x2, y2 , zmax=100, depth=c(-25, 0) , COL=rainbow(100), LIM
 
 
     
-    if(PLOT) {  PLOT.TOMOXSEC(xz, COL=COL) }
+    if(PLOT) {  PLOT.TOMOXSEC(xz, COL=COL, LIM) }
     invisible(xz)
   }
 

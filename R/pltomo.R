@@ -31,7 +31,16 @@ function(x,y,MOD,i, colmap=rainbow(100), zlim=NULL, bkgr="DarkSlateGray4", ...)
       }
     else
       {
+
+        if(length(zlim)==2)
+          {
         image(x,y,Z, asp=1, col=colmap,  xlab="km", ylab="km", zlim=zlim, add=TRUE)
+      }
+        else
+          {
+
+            image(x,y,Z, asp=1, col=colmap,  xlab="km", ylab="km", breaks=zlim, add=TRUE)
+          }
       }
 
     return(1)

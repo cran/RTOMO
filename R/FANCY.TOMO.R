@@ -24,9 +24,16 @@ function(MOD, i, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,
     
     if(missing(TIT)) { TIT= paste(sep=' ', "LAYER=", i, "Depth", MOD$D[i], "-", MOD$D[i+1]) }
 
-    if(is.null(LIM)) { LIM= range(MOD$MOD[[i]], na.rm=TRUE) } 
+    if(is.null(LIM)) { LIM= range(MOD$MOD[[i]], na.rm=TRUE) }
+
+    
     
     pltomo(MOD$x,MOD$y,MOD$MOD,i, COL, zlim=LIM, bkgr=bkgr, xlab="km", ylab="km")
+
+
+
+
+    
     HOZscale(LIM , col=COL  , units=UNITS, SIDE=1)
     if(require(GEOmap)==TRUE)
       {

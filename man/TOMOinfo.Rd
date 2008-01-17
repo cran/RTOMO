@@ -4,10 +4,12 @@
 \description{Dump  tomogram information
 }
 \usage{
-TOMOinfo(MOD)
+TOMOinfo(MOD, PLOT=FALSE)
 }
 \arguments{
   \item{MOD}{Model Structure }
+   \item{PLOT}{logical, TRUE=plot boxplot }
+  
 }
 
 \value{

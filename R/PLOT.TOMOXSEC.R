@@ -29,13 +29,29 @@ function(XZSEC , depth=c(-25, 0) , COL=NULL, LIM=NULL, STA=NULL, ADD=FALSE)
       {
         m1 = min(XZSEC$z, na.rm=TRUE)
         m2 = max(XZSEC$z, na.rm=TRUE)
+        brs = seq(from=m1, to=m2, length=length(COL)   )
+        
+        
       }
     else
       {
-        m1 = LIM[1]
-        m2 = LIM[2]
+
+        if(length(LIM)==2)
+          { 
+            m1 = LIM[1]
+            m2 = LIM[2]
+            brs = seq(from=m1, to=m2, length=length(COL)   )
+            
+          }
+        else
+          {
+
+            brs = LIM
+          }
+
+
+        
       }
-    brs = seq(from=m1, to=m2, length=length(COL)   )
   
 
     
