@@ -42,8 +42,9 @@ lines(L)
 
 readline("To Continue Hit Enter Key\n")
 
+dev.new()
 
-get(getOption("device"))()
+### get(getOption("device"))()
 
 TOMOXSEC(HELMOD, L$x[1],  L$y[1],  L$x[2],  L$y[2], zmax=20, depth = c(-25, 0),
     COL = tomo.colors(100), LIM = NULL, STA = NULL, PLOT = TRUE)

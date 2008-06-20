@@ -6,6 +6,8 @@ if(missing(PLOT)) { PLOT=FALSE }
  
  N = length(MOD$MOD)
 
+## for(i in 1:N ) { print(any(is.na(MOD$MOD[[i]]))) }
+
  SLAY = NULL
 
  
@@ -42,8 +44,9 @@ if(missing(PLOT)) { PLOT=FALSE }
  OLAY = data.frame(SLAY)
  print(OLAY)
 
-if(PLOT) { boxplot(MOD, varwidth =TRUE) }
- 
+if(PLOT) { boxplot(MOD$MOD) }
+##  if(PLOT) { tufteboxplot(MOD$MOD) }
+  
   invisible(OLAY)
 }
 
