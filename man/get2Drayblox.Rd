@@ -21,9 +21,7 @@ get2Drayblox(x1, y1, x2, y2, xo, yo, NODES = FALSE, PLOT = FALSE)
   \item{NODES}{logical, whether xo, yo ae nodes or edges}
   \item{PLOT}{logical, TRUE=plot ray}
 }
-\details{
- 
-}
+
 \value{
   \item{ix}{x index}
   \item{iy}{y index}

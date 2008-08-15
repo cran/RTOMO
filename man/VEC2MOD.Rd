@@ -22,9 +22,7 @@ MOD2VEC(MOD)
 }
 
 \author{Jonathan M. Lees<jonathan.lees@unc.edu>}
-\note{
 
-}
 \seealso{GXMA3D}
 \examples{
 

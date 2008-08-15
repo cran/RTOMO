@@ -26,7 +26,7 @@ makeMOD(xo, yo, ztop, x, y, z, r, v, bg)
 \value{
  Model List
 }
-\references{}
+
 \author{Jonathan M. Lees<jonathan.lees@unc.edu>}
 
 \seealso{GXMA3D, SHOWTOMO}

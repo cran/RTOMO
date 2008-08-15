@@ -8,21 +8,23 @@
 \usage{data(HELEQ)}
 \format{
   List:
-  \item{yr}{year}
-\item{mo}{Month}
-\item{dom}{Day of Month}
-\item{hr}{Hour}
-\item{mi}{Minute}
-\item{sec}{Second}
-\item{jd}{Julian Day}
-\item{lat}{latitude, signed decimal degree (West is negative)}
-\item{lon}{longitude, signed decimal degree}
-\item{z}{depth, km}
-\item{mag}{magitude}
-\item{gap}{gap}
-\item{delta}{distance to nearest station}
-\item{rms}{root, mean square error}
-\item{hozerr}{horrizontal uncertainty, km}
+  \describe{
+    \item{yr}{year}
+    \item{mo}{Month}
+    \item{dom}{Day of Month}
+    \item{hr}{Hour}
+    \item{mi}{Minute}
+    \item{sec}{Second}
+    \item{jd}{Julian Day}
+    \item{lat}{latitude, signed decimal degree (West is negative)}
+    \item{lon}{longitude, signed decimal degree}
+    \item{z}{depth, km}
+    \item{mag}{magitude}
+    \item{gap}{gap}
+    \item{delta}{distance to nearest station}
+    \item{rms}{root, mean square error}
+    \item{hozerr}{horrizontal uncertainty, km}
+  }
 
 }
 \details{

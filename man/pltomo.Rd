@@ -21,14 +21,19 @@ pltomo(x,y,MOD,i, colmap=rainbow(100), zlim=NULL, bkgr="DarkSlateGray4", ...)
   Does not set the projection, does not add any markup - all this does
   is start the plotting set up and puts the image on the plot.
 }
+
 \value{
  Graphical Side effects
-}\references{}
+}
+
 \author{Jonathan M. Lees<jonathan.lees@unc.edu>}
+
 \note{
 This routine is used by SHOWTOMO
 }
+
 \seealso{FANCY.TOMO, SHOWTOMO, GXMA3DV}
+
 \examples{
 
 data(HELMOD)

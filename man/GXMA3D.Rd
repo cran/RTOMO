@@ -18,15 +18,15 @@ GXMA3D(name)
   
 }
 \details{
-
-  \item{name}{Model Structure}
-  \item{A}{location information list: lat lon nx ny nz dx dy skip}
-  \item{D}{vector, tops of layers}
-  \item{V}{vector, velocity of layers}
-  \item{MOD}{3D MODEL list}
-  \item{x}{x nodes}
-  \item{y}{y nodes}
-
+  \describe{
+    \item{name}{Model Structure}
+    \item{A}{location information list: lat lon nx ny nz dx dy skip}
+    \item{D}{vector, tops of layers}
+    \item{V}{vector, velocity of layers}
+    \item{MOD}{3D MODEL list}
+    \item{x}{x nodes}
+    \item{y}{y nodes}
+  }
   
 
   

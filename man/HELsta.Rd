@@ -7,10 +7,12 @@
 }
 \usage{data(HELsta)}
 \format{
+   \describe{
   \item{name}{character, station name}
   \item{lat}{latitude, signed decimal degree (West is negative)}
   \item{lon}{longitude, signed decimal degree}
   \item{z}{elevation, km}
+  }
 }
 
 \references{

@@ -16,12 +16,12 @@ Plot and Interact with Tomographic Images
 \tabular{ll}{
 Package: \tab RTOMO\cr
 Type: \tab Package\cr
-Version: \tab 1.0-4\cr
-Date: \tab 2008-06-20\cr
+Version: \tab 1.0-6\cr
+Date: \tab 2008-08-15\cr
 License: \tab GPL\cr
 }
 Visualization for seismic tomography, includes:
-
+\describe{
 \item{TOMO3D.drive}{Interactive tomography exploration}
 \item{SHOWTOMO}{show tomographic model in multi-panel display}
 \item{FANCY.TOMO}{Tomographic plot of one layer}
@@ -29,15 +29,16 @@ Visualization for seismic tomography, includes:
 \item{XSEC.drive}{Interactive plot of vertical cross section}
 \item{PLOT.TOMOXSEC}{plot Cross section of tomographic model}
 \item{TOMOXSEC}{Vertical Cross section through model}
-
+}
 Model I/O:
+\describe{
 \item{GXMA3D}{Get 3D perturbation model in geotouch format}
 \item{GXMA3DV}{Get 3D velocity model in geotouch format}
-
 \item{makeMOD}{Make 3D synthetic model}
-
+}
 
 Utilities:
+\describe{
 \item{tomo.colors}{color palette for tomography}
 \item{TOMOinfo}{Information about the tomographic layers}
 
@@ -46,7 +47,7 @@ Utilities:
 
 \item{get2Drayblox}{get 2D ray blocks}
 \item{get3Drayblox}{get 3D ray blocks}
-
+}
 
 }
 \author{
@@ -55,7 +56,7 @@ Maintainer: Jonathan M. Lees <jonathan.lees@unc.edu>
 }
 \references{
  J. M.  Lees.  Geotouch: Software for three and four dimensional
-  GIS in the earth sciences.   {\em Computers  &  Geosciences} ,
+  GIS in the earth sciences.   \emph{Computers and  Geosciences} ,
   26(7):751--761, 2000.
 
 

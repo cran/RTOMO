@@ -10,14 +10,16 @@
 \format{
   The format is:
   List of 8
-  \item{zp}{depths to tops of P-wave model, km}
-\item{vp}{P velocity in layers, km/s}
-\item{ep}{uncertainty in P velocity}
-\item{zs}{depths to tops of S-wave model, km}
-\item{vs}{S velocity in layers, km/s}
-\item{es}{uncertainty in S velocity}
-\item{name}{anme of file where model is stored}
-\item{descriptor}{text desription of model}
+   \describe{
+     \item{zp}{depths to tops of P-wave model, km}
+     \item{vp}{P velocity in layers, km/s}
+     \item{ep}{uncertainty in P velocity}
+     \item{zs}{depths to tops of S-wave model, km}
+     \item{vs}{S velocity in layers, km/s}
+     \item{es}{uncertainty in S velocity}
+     \item{name}{anme of file where model is stored}
+     \item{descriptor}{text desription of model}
+   }
 
 }
 

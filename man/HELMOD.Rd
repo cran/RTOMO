@@ -7,21 +7,23 @@
 }
 \usage{data(HELMOD)}
 \format{
-\item{name}{name of file}
-\item{A}{list origin information }
-   \item{lat}{latitude, signed decimal degree (West is negative)}
-   \item{lon}{longitude, signed decimal degree}
-   \item{nx}{dimension or number of nodes in x-direction}
-   \item{ny}{dimension or number of nodes in y-direction}
-   \item{nz}{dimension or number of nodes in z-direction}
-   \item{dx}{delta x}
-   \item{dy}{delta y}
-   \item{skip}{skipping flag}
-\item{D}{depths in Z, km}
-\item{V}{background model for 1D structure}
-\item{MOD}{3D model structure}
-\item{x}{x divisions (nodes in x, km)}
-\item{y}{y divisions (nodes in y, km) }
+  \describe{
+    \item{name}{name of file}
+    \item{A}{list origin information }
+    \item{lat}{latitude, signed decimal degree (West is negative)}
+    \item{lon}{longitude, signed decimal degree}
+    \item{nx}{dimension or number of nodes in x-direction}
+    \item{ny}{dimension or number of nodes in y-direction}
+    \item{nz}{dimension or number of nodes in z-direction}
+    \item{dx}{delta x}
+    \item{dy}{delta y}
+    \item{skip}{skipping flag}
+    \item{D}{depths in Z, km}
+    \item{V}{background model for 1D structure}
+    \item{MOD}{3D model structure}
+    \item{x}{x divisions (nodes in x, km)}
+    \item{y}{y divisions (nodes in y, km) }
+  }
 
 }
 
