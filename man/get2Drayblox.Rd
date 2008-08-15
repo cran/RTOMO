@@ -34,8 +34,7 @@ get2Drayblox(x1, y1, x2, y2, xo, yo, NODES = FALSE, PLOT = FALSE)
 }
 
 \author{Jonathan M. Lees<jonathan.lees@unc.edu>}
-\note{ 
-}
+
 \seealso{get3Drayblox}
 \examples{
 

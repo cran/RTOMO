@@ -26,15 +26,43 @@ function(MOD, i, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,
 
     if(is.null(LIM)) { LIM= range(MOD$MOD[[i]], na.rm=TRUE) }
 
+   typefaces = c("serif", "sans serif", "script", "gothic english", 
+        "serif symbol", "sans serif symbol")
+    fontindeces = c("plain", "italic", "bold", "bold italic", 
+        "cyrillic")
+    typeface = typefaces[1]
+    fontindex = fontindeces[1]
+    vfont = c(typeface, fontindex)
+
+
+    leestomo = TRUE
+    if(leestomo)
+      {
     
+    DX = (MOD$x[2]-MOD$x[1])/2
+    NX = length(MOD$x)
     
-    pltomo(MOD$x,MOD$y,MOD$MOD,i, COL, zlim=LIM, bkgr=bkgr, xlab="km", ylab="km")
+    PX = seq(from=MOD$x[1], to=MOD$x[NX]+((MOD$x[2]-MOD$x[1])) , length=NX+1)
+    
+    DY = (MOD$y[2]-MOD$y[1])/2
+    NY = length(MOD$y)
+    
+    PY = seq(from=MOD$y[1], to=MOD$y[NY]+((MOD$y[2]-MOD$y[1])), length=NY+1)
+    
+  }
+    
+    pltomo(PX,PY,MOD$MOD,i, COL, zlim=LIM, bkgr=bkgr, xlab="km", ylab="km")
+
+## ColorScale(MOD$MOD, loc=list(x=range(PX), y=range(PY)), offset=.2,
+##          col = COL, units = "%Vel", font = 1, fontindex = 3, SIDE = 3)
 
 
+##   ColorScale(MOD$MOD, loc=list(x=range(PX), y=range(PY)), offset=.5,
+##            col = COL, units = "%Vel", font = 1, fontindex = 3, SIDE = 1)
 
 
     
-    HOZscale(LIM , col=COL  , units=UNITS, SIDE=1)
+   ##   HOZscale(LIM , col=COL  , units=UNITS, SIDE=1)
     if(require(GEOmap)==TRUE)
       {
         
@@ -84,7 +112,35 @@ function(MOD, i, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,
     
     ##	text(STA$x[STAFLAG], STA$y[STAFLAG], labels=STA$nam[STAFLAG], pos=3, col='green', cex=.65)
     ## print(TIT)
+
+
+    loc=list(x=range(PX), y=range(PY))
+
+    antipolygon(x=c(loc$x[1], loc$x[2], loc$x[2] , loc$x[1]),
+                y=c(loc$y[1], loc$y[1], loc$y[2], loc$y[2]),col = "white" , corner = 1, pct = 0.4)
+
+    rect(loc$x[1], loc$y[1], loc$x[2], loc$y[2])
+
+    xax = pretty(range(PX))
+    xax = xax[xax>=loc$x[1] & xax<=loc$x[2] ]
+
+  yax = pretty(range(PY))
+    yax = yax[yax>=loc$y[1] & yax<=loc$y[2] ]
+
+
+
+    addtix(side=1, pos=loc$y[1], at=xax, tck = 0.8)
+    text(xax, rep(loc$y[1],  length=length(xax)), labels=xax, pos=1, vfont=vfont)
+
+    addtix(side=2, pos=loc$x[1], at=yax, tck = 0.8)
+    text( rep(loc$x[1],  length=length(yax)), yax , labels=yax, pos=2, vfont=vfont)
+   
     
+  
+     ColorScale(MOD$MOD, loc=list(x=range(PX), y=range(PY)), offset=.5,
+          col = COL, units = "%Vel", font = 1, fontindex = 3, SIDE = 1)
+
+
     if(!is.null(TIT))
       {
         title(main=TIT, sub=TIT)

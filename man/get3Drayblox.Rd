@@ -18,9 +18,7 @@ get3Drayblox(XNOD, YNOD, ZNOD, xo, yo, ztop, slowness = NULL)
   \item{ztop}{vector, topsof layers}
   \item{slowness}{vector, Slowness model}
 }
-\details{
- 
-}
+
 \value{
   \item{ix}{x index}
   \item{iy}{y index}
@@ -30,8 +28,7 @@ get3Drayblox(XNOD, YNOD, ZNOD, xo, yo, ztop, slowness = NULL)
 }
 
 \author{Jonathan M. Lees<jonathan.lees@unc.edu>}
-\note{ 
-}
+
 \seealso{get2Drayblox}
 \examples{
 

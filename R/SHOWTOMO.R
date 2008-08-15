@@ -29,7 +29,7 @@ function(MOD, colmap=topo.colors(100),  zlim=NULL,  MAP=NULL, I=1, J=2, bkgr="wh
   for( i in I:KMAX)
     {
       
-      pltomo(MOD$x,MOD$y,MOD$MOD,i, col=colmap, zlim=zlim,  bkgr= bkgr, axes=FALSE, ann=FALSE )
+      pltomo(MOD$x,MOD$y,MOD$MOD,i, col=colmap, zlim=zlim,  bkgr= bkgr )
       
       ##  image(xo, yo, TM1$MOD[[i]], col=tomo.colors(100), axes=FALSE, ann=FALSE) 
 

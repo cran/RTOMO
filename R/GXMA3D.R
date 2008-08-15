@@ -40,7 +40,7 @@ function(name)
 
 
     ###  image(x,y,MOD[[3]], col=tomocolors)
-    ###  image(x,y,MOD[[5]], col=tomocolors)
+    ###  image(x,y,MOD[[5]], col=tomo.col2 , asp=1)
 
   ###     DAPROJ = PROJ.DATA
    ###    setPROJ(type=2, LAT0=A$lat, LON0=A$lon )

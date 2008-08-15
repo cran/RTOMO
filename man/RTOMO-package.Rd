@@ -16,7 +16,7 @@ Plot and Interact with Tomographic Images
 \tabular{ll}{
 Package: \tab RTOMO\cr
 Type: \tab Package\cr
-Version: \tab 1.0-6\cr
+Version: \tab 1.0-7\cr
 Date: \tab 2008-08-15\cr
 License: \tab GPL\cr
 }

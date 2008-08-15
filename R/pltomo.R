@@ -8,7 +8,8 @@ function(x,y,MOD,i, colmap=rainbow(100), zlim=NULL, bkgr="DarkSlateGray4", ...)
 
     Z = MOD[[i]]
 
-    plot(range(x), range(y), asp=1,    type='n', ...)
+    
+    plot(range(x), range(y), asp=1,   axes=FALSE, ann=FALSE,  type='n', ...)
 
     
     rect(min(x), min(y), max(x), max(y), col=bkgr)
