@@ -2,7 +2,7 @@
 function(MOD, i, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,
                      STA=NULL, staparams=list(col='green', pch=6, cex=.8, name=FALSE),
                      PTS=NULL, ptsparams=list(col='green', pch=6, cex=.8, name=FALSE),
-                     TIT="Layer", UNITS="", bkgr="DarkSlateGray4" )
+                     TIT="Layer", mainTIT="Layer",  UNITS="", bkgr="DarkSlateGray4" )
   {
 
     
@@ -23,6 +23,7 @@ function(MOD, i, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,
     if(missing(bkgr)) { bkgr="DarkSlateGray4" }
     
     if(missing(TIT)) { TIT= paste(sep=' ', "LAYER=", i, "Depth", MOD$D[i], "-", MOD$D[i+1]) }
+    if(missing(mainTIT)) { mainTIT=NULL }
 
     if(is.null(LIM)) { LIM= range(MOD$MOD[[i]], na.rm=TRUE) }
 
@@ -143,7 +144,7 @@ function(MOD, i, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,
 
     if(!is.null(TIT))
       {
-        title(main=TIT, sub=TIT)
+        title(main=mainTIT, sub=TIT)
       }
     
     

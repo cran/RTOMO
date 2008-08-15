@@ -5,7 +5,7 @@
   Interactive Exploration of 3D tomographic inversio
 }
 \usage{
-TOMO3D.drive(MOD, COL = NULL, LIM = NULL, MAP = NULL, MAPLIM = NULL, STA = NULL, TOPO = NULL, STDLAB = c("DONE", "QUIT"))
+TOMO3D.drive(MOD, COL = NULL, LIM = NULL, MAP = NULL, MAPLIM = NULL,  ZLIM=c(0, 30), STA = NULL, TOPO = NULL, STDLAB = c("DONE", "QUIT"))
 }
 \arguments{
   \item{MOD}{Model List }
@@ -13,6 +13,7 @@ TOMO3D.drive(MOD, COL = NULL, LIM = NULL, MAP = NULL, MAPLIM = NULL, STA = NULL,
   \item{LIM}{ Value limits for colors}
   \item{MAP}{Map strcuture (GEOmap) }
   \item{MAPLIM}{Boundary for map limits}
+  \item{ZLIM}{ Limits in Depth}
   \item{STA}{Station File}
   \item{TOPO}{Topographic Structure}
   \item{STDLAB}{vector of menu items}

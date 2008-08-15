@@ -5,7 +5,10 @@
   Show horizontal tomographic section layer by layer
 }
 \usage{
-FANCY.TOMO(MOD, i, COL = NULL, LIM = NULL, MAP = NULL, MAPLIM = NULL, STA = NULL, staparams = list(col = "green", pch = 6, cex = 0.8, name = FALSE), PTS = NULL, ptsparams = list(col = "green", pch = 6, cex = 0.8, name = FALSE), TIT = "Layer", UNITS = "", bkgr = "DarkSlateGray4")
+FANCY.TOMO(MOD, i, COL = NULL, LIM = NULL, MAP = NULL, MAPLIM = NULL,
+STA = NULL, staparams = list(col = "green", pch = 6, cex = 0.8, name =
+FALSE), PTS = NULL, ptsparams = list(col = "green", pch = 6, cex = 0.8,
+name = FALSE), TIT = "Layer", mainTIT="Layer", UNITS = "", bkgr = "DarkSlateGray4")
 }
 \arguments{
   \item{MOD}{MODEL list}
@@ -19,6 +22,7 @@ FANCY.TOMO(MOD, i, COL = NULL, LIM = NULL, MAP = NULL, MAPLIM = NULL, STA = NULL
   \item{PTS}{points list, e.e. earthquakes (lat lon z) }
   \item{ptsparams}{graphical parameters for plotting points }
   \item{TIT}{Title}
+  \item{mainTIT}{Main Title}
   \item{UNITS}{units}
   \item{bkgr}{background color for NA in image}
 }

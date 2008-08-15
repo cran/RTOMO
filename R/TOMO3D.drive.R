@@ -1,5 +1,5 @@
 `TOMO3D.drive` <-
-function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,STA=NULL, TOPO=NULL,  STDLAB=c("DONE", "QUIT") )
+function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,  ZLIM=c(0, 30), STA=NULL, TOPO=NULL,  STDLAB=c("DONE", "QUIT") )
   {
 
     if(missing(COL)) { COL=tomo.colors(100) }
@@ -9,6 +9,7 @@ function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,STA=NULL, TOPO=NULL,  ST
     
     if(missing(STA)) { STA=NULL }
     if(missing(TOPO)) { TOPO=NULL }
+    if(missing(ZLIM)) { ZLIM =c(0, 30) }
     
      
    
@@ -33,6 +34,15 @@ function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,STA=NULL, TOPO=NULL,  ST
 
 
     proj = MAP$PROJ
+
+    if(is.null(proj))
+      {
+        
+        proj = MOD$proj
+
+      }
+
+    
     
     FANCY.TOMO(MOD, ilay, COL=COL, LIM=LIM, MAP=MAP, MAPLIM=MAPLIM, STA=STA, TIT = NULL)
     upar = par("usr")
@@ -114,7 +124,7 @@ function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,STA=NULL, TOPO=NULL,  ST
           ilay = ilay-1
           if(ilay<1) ilay = 1
           
-          FANCY.TOMO(MOD, ilay, COL=COL, LIM=LIM, MAP=MAP, MAPLIM=MAPLIM, STA=STA, TIT = NULL)
+          FANCY.TOMO(MOD, ilay, COL=COL, LIM=LIM, MAP=MAP, MAPLIM=MAPLIM, STA=STA)
           upar = par("usr")
 
           buttons = rowBUTTONS(BLABS, col=colabs, pch=pchlabs)
@@ -260,7 +270,7 @@ function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,STA=NULL, TOPO=NULL,  ST
                dis = sqrt((x2-x1)^2+(y2-y1)^2)
                print(dis)
 
-               zmax = 30
+               zmax = ZLIM[2]
                for(jsec in 1:length(x1))
                  {
                    ############# X11(width = 10, height = 10*zmax/dis[jsec])

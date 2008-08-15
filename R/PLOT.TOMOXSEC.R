@@ -59,8 +59,12 @@ fs = findInterval( XZSEC$z, brs)
  mfs =   t(matrix(fs, ncol=ncol(XZSEC$z), nrow=nrow(XZSEC$z)))
 
     
+##############    here the colors are flipped!
 
-   rect( MXY1$x,  MXY1$y,  MXY2$x,  MXY2$y, border=NA, col= COL[100-mfs+1]  )       
+ ### rect( MXY1$x,  MXY1$y,  MXY2$x,  MXY2$y, border=NA, col= COL[100-mfs+1]  )       
+   
+    
+   rect( MXY1$x,  MXY1$y,  MXY2$x,  MXY2$y, border=NA, col= COL[mfs]  )       
    
   }
 
