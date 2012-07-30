@@ -1,5 +1,6 @@
 `SHOWTOMO` <-
-function(MOD, colmap=topo.colors(100),  zlim=NULL,  MAP=NULL, I=1, J=2, bkgr="white"  )
+function(MOD, colmap=topo.colors(100),  zlim=NULL,  MAP=NULL, I=1, J=2, bkgr="white" ,
+         linelty=1, linelwd=1, ptpch=".", ptcex=1 )
 {
   if(missing(colmap)) { colmap=tomo.colors(100) }
   if(missing(MAP)) { MAP=NULL }
@@ -29,7 +30,7 @@ function(MOD, colmap=topo.colors(100),  zlim=NULL,  MAP=NULL, I=1, J=2, bkgr="wh
   for( i in I:KMAX)
     {
       
-      pltomo(MOD$x,MOD$y,MOD$MOD,i, col=colmap, zlim=zlim,  bkgr= bkgr )
+      pltomo(MOD$x,MOD$y,MOD$MOD,i, colmap=colmap, zlim=zlim,  bkgr= bkgr )
       
       ##  image(xo, yo, TM1$MOD[[i]], col=tomo.colors(100), axes=FALSE, ann=FALSE) 
 
@@ -41,7 +42,7 @@ function(MOD, colmap=topo.colors(100),  zlim=NULL,  MAP=NULL, I=1, J=2, bkgr="wh
 ###  PROJmap(JAPmap,  ADD=TRUE, COL=TRUE)
 
       box()
-        if(!is.null(MAP)) plotGEOmapXY(MAP, PROJ=MAP$PROJ, add=TRUE, xpd=FALSE)
+        if(!is.null(MAP)) plotGEOmapXY(MAP, PROJ=MAP$PROJ, add=TRUE, xpd=FALSE,   linelty=linelty, linelwd=linelwd, ptpch=ptpch, ptcex=ptcex  )
       
       
 ###     title(paste(sep=' ', "Depth", MOD$D[i], "-", MOD$D[i+1]))

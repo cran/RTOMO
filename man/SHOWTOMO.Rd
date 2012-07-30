@@ -5,7 +5,8 @@
   Plots a row of layers for quick view of tomographic results with map overlay.
 }
 \usage{
-SHOWTOMO(MOD, colmap = topo.colors(100), zlim = NULL, MAP = NULL, I = 1, J = 2, bkgr="white")
+SHOWTOMO(MOD, colmap = topo.colors(100), zlim = NULL, MAP = NULL, I = 1,
+J = 2, bkgr="white", linelty = 1, linelwd = 1, ptpch=".", ptcex=1)
 }
 \arguments{
   \item{MOD}{ MODEL list}
@@ -15,7 +16,13 @@ SHOWTOMO(MOD, colmap = topo.colors(100), zlim = NULL, MAP = NULL, I = 1, J = 2, 
   \item{I}{first lay index }
   \item{J}{last layer index}
   \item{bkgr}{background color}
-  
+   \item{linelty}{Line type, for GEOmap}
+  \item{linelwd}{line width, for GEOmap}
+  \item{ptpch}{plotting character for strokes (style=1) that are plotted
+  as points, for GEOmap}
+  \item{ptcex}{character expansion factor for style=1 strokes, for GEOmap }
+
+
 }
 
 \value{
