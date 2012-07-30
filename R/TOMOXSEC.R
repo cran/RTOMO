@@ -1,7 +1,7 @@
 `TOMOXSEC` <-
 function(MOD, x1, y1, x2, y2 , zmax=100, depth=c(-25, 0) , COL=rainbow(100), LIM=NULL, STA=NULL, PLOT=TRUE)
   {
-    if(missing(COL)) { COL=tomo.colors(100) }
+    if(missing(COL)) { COL=TOMO.colors(100) }
     if(missing(LIM)) { LIM=NULL }
     if(missing(STA)) { STA=NULL }
     if(missing(zmax)) { zmax = max(MOD$D) }

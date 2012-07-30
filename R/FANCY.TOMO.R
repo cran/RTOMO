@@ -7,7 +7,7 @@ function(MOD, i, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,
 
     
 
-    if(missing(COL)) { COL=tomo.colors(100) }
+    if(missing(COL)) { COL=TOMO.colors(100) }
     if(missing(LIM)) { LIM=NULL }
     if(missing(MAP)) { MAP=NULL }
     if(missing(MAPLIM)) { MAPLIM=NULL }
@@ -54,19 +54,17 @@ function(MOD, i, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,
     
     pltomo(PX,PY,MOD$MOD,i, COL, zlim=LIM, bkgr=bkgr, xlab="km", ylab="km")
 
-## ColorScale(MOD$MOD, loc=list(x=range(PX), y=range(PY)), offset=.2,
+## GEOmap::ColorScale(MOD$MOD, loc=list(x=range(PX), y=range(PY)), offset=.2,
 ##          col = COL, units = "%Vel", font = 1, fontindex = 3, SIDE = 3)
 
 
-##   ColorScale(MOD$MOD, loc=list(x=range(PX), y=range(PY)), offset=.5,
+##   GEOmap::ColorScale(MOD$MOD, loc=list(x=range(PX), y=range(PY)), offset=.5,
 ##            col = COL, units = "%Vel", font = 1, fontindex = 3, SIDE = 1)
 
 
     
    ##   HOZscale(LIM , col=COL  , units=UNITS, SIDE=1)
-    if(require(GEOmap)==TRUE)
-      {
-        
+     
    
     
 ### HOZscale(MOD$MOD[[i]] , col=tomocolors  , units="%", SIDE=2)
@@ -77,18 +75,18 @@ function(MOD, i, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,
         if(!is.null(MAP))
           {
             ##  plotGEOmapXY(MAP, LIM=MAPLIM   , PROJ =MAP$PROJ ,   add=TRUE)
-            plotGEOmapXY(MAP, PROJ=MAP$PROJ, add=TRUE, xpd=FALSE )
+            GEOmap::plotGEOmapXY(MAP, PROJ=MAP$PROJ, add=TRUE, xpd=FALSE )
           }
         if(!is.null(STA))
           {
             if(is.null(STA$FLAG)) { sflag = rep(TRUE, length(STA$x))} else { sflag = STA$FLAG }
             
-            pointsGEOmapXY(STA$lat[sflag], STA$lon[sflag], PROJ=MAP$PROJ, pch=staparams$pch, col=staparams$col, cex=staparams$cex)
+            GEOmap::pointsGEOmapXY(STA$lat[sflag], STA$lon[sflag], PROJ=MAP$PROJ, pch=staparams$pch, col=staparams$col, cex=staparams$cex)
             
             if(identical(staparams$name, TRUE))
               {
                 
-                textGEOmapXY(STA$lat[sflag], STA$lon[sflag], labels=STA$name[sflag], PROJ=MAP$PROJ, pos=3, cex=staparams$cex)
+                GEOmap::textGEOmapXY(STA$lat[sflag], STA$lon[sflag], labels=STA$name[sflag], PROJ=MAP$PROJ, pos=3, cex=staparams$cex)
               }
             
             
@@ -98,17 +96,17 @@ function(MOD, i, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,
         if(!is.null(PTS))
           {
             if(is.null(PTS$FLAG)) { sflag = rep(TRUE, length(PTS$lat))} else { sflag = PTS$FLAG }
-            pointsGEOmapXY(PTS$lat[sflag], PTS$lon[sflag], PROJ=MAP$PROJ, pch=ptsparams$pch, col=ptsparams$col, cex=ptsparams$cex)
+            GEOmap::pointsGEOmapXY(PTS$lat[sflag], PTS$lon[sflag], PROJ=MAP$PROJ, pch=ptsparams$pch, col=ptsparams$col, cex=ptsparams$cex)
             
             if(identical(ptsparams$name, TRUE))
               {
                 
-                textGEOmapXY(PTS$lat[sflag], PTS$lon[sflag], PROJ=MAP$PROJ, PTS$name[sflag], pos=3, cex=ptsparams$cex)
+                GEOmap::textGEOmapXY(PTS$lat[sflag], PTS$lon[sflag], PROJ=MAP$PROJ, PTS$name[sflag], pos=3, cex=ptsparams$cex)
               }
         
           }
         
-      }
+      
     
     
     ##	text(STA$x[STAFLAG], STA$y[STAFLAG], labels=STA$nam[STAFLAG], pos=3, col='green', cex=.65)
@@ -117,7 +115,7 @@ function(MOD, i, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,
 
     loc=list(x=range(PX), y=range(PY))
 
-    antipolygon(x=c(loc$x[1], loc$x[2], loc$x[2] , loc$x[1]),
+    GEOmap::antipolygon(x=c(loc$x[1], loc$x[2], loc$x[2] , loc$x[1]),
                 y=c(loc$y[1], loc$y[1], loc$y[2], loc$y[2]),col = "white" , corner = 1, pct = 0.4)
 
     rect(loc$x[1], loc$y[1], loc$x[2], loc$y[2])
@@ -130,15 +128,15 @@ function(MOD, i, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,
 
 
 
-    addtix(side=1, pos=loc$y[1], at=xax, tck = 0.8)
+    RSEIS::addtix(side=1, pos=loc$y[1], at=xax, tck = 0.8)
     text(xax, rep(loc$y[1],  length=length(xax)), labels=xax, pos=1, vfont=vfont)
 
-    addtix(side=2, pos=loc$x[1], at=yax, tck = 0.8)
+    RSEIS::addtix(side=2, pos=loc$x[1], at=yax, tck = 0.8)
     text( rep(loc$x[1],  length=length(yax)), yax , labels=yax, pos=2, vfont=vfont)
    
     
   
-     ColorScale(MOD$MOD, loc=list(x=range(PX), y=range(PY)), offset=.5,
+     GEOmap::ColorScale(MOD$MOD, loc=list(x=range(PX), y=range(PY)), offset=.5,
           col = COL, units = "%Vel", font = 1, fontindex = 3, SIDE = 1)
 
 

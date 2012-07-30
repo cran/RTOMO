@@ -5,7 +5,9 @@
   Interactive Exploration of 3D tomographic inversio
 }
 \usage{
-TOMO3D.drive(MOD, COL = NULL, LIM = NULL, MAP = NULL, MAPLIM = NULL,  ZLIM=c(0, 30), STA = NULL, TOPO = NULL, STDLAB = c("DONE", "QUIT"))
+TOMO3D.drive(MOD, COL = NULL, LIM = NULL,
+ MAP = NULL, MAPLIM = NULL,  ZLIM=c(0, 30),
+ STA = NULL, TOPO = NULL, STDLAB = c("DONE", "QUIT"))
 }
 \arguments{
   \item{MOD}{Model List }

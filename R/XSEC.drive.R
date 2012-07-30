@@ -1,8 +1,8 @@
 `XSEC.drive` <-
-  function(MOD, x1, y1, x2, y2 , zmax=100, COL=tomo.colors(100), LIM=NULL, STA=NULL, TOP=NULL, STDLAB=c("DONE", "QUIT"))
+  function(MOD, x1, y1, x2, y2 , zmax=100, COL=TOMO.colors(100), LIM=NULL, STA=NULL, TOP=NULL, STDLAB=c("DONE", "QUIT"))
 {
 
-  if(missing(COL)) { COL=tomo.colors(100) }
+  if(missing(COL)) { COL=TOMO.colors(100) }
   if(missing(LIM)) { LIM=NULL }
   if(missing(STA)) { STA=NULL }
   if(missing(TOP)) { TOP=NULL }
@@ -24,7 +24,7 @@
   
   XZ = TOMOXSEC(MOD, x1, y1, x2, y2 , zmax=zmax, COL=COL, LIM=LIM, STA=STA, PLOT=FALSE)
   PLOT.TOMOXSEC(XZ, COL=COL)
-  buttons = rowBUTTONS(BLABS, col=colabs, pch=pchlabs)
+  buttons = RPMG::rowBUTTONS(BLABS, col=colabs, pch=pchlabs)
   
   MAINdev = dev.cur()
   dev.set( MAINdev)
@@ -39,7 +39,7 @@
   Nclick = length(zloc$x)
   
   if(is.null(iloc$x)) { return(0) }
-  K = whichbutt(iloc ,buttons)
+  K = RPMG::whichbutt(iloc ,buttons)
   
   sloc = zloc
 
@@ -50,7 +50,7 @@
     {
       if(K[Nclick] == match("DONE", BLABS, nomatch = NOLAB))
         {
-           buttons = rowBUTTONS(BLABS, col=rep(grey(.8), length(BLABS)), pch=rep("NULL", length(BLABS)))
+           buttons = RPMG::rowBUTTONS(BLABS, col=rep(grey(.8), length(BLABS)), pch=rep("NULL", length(BLABS)))
           title("Return to Calling Program")
           
           break;
@@ -59,7 +59,7 @@
       if(K[Nclick] == match("QUIT", BLABS, nomatch = NOLAB))
         {
 
-           buttons = rowBUTTONS(BLABS, col=rep(grey(.8), length(BLABS)), pch=rep("NULL", length(BLABS)))
+           buttons = RPMG::rowBUTTONS(BLABS, col=rep(grey(.8), length(BLABS)), pch=rep("NULL", length(BLABS)))
           title("Return to Calling Program")
           
           return(NULL)
@@ -72,7 +72,7 @@
 
           PLOT.TOMOXSEC(XZ, COL=COL)
           upar = par("usr")
-          buttons = rowBUTTONS(BLABS, col=colabs, pch=pchlabs)
+          buttons = RPMG::rowBUTTONS(BLABS, col=colabs, pch=pchlabs)
           zloc = list(x=NULL, y=NULL)
           
         }
@@ -83,7 +83,7 @@
           
           PLOT.TOMOXSEC(XZ, COL=COL)
           upar = par("usr")
-          buttons = rowBUTTONS(BLABS, col=colabs, pch=pchlabs)
+          buttons = RPMG::rowBUTTONS(BLABS, col=colabs, pch=pchlabs)
           zloc = list(x=NULL, y=NULL)
           
         }
@@ -99,7 +99,7 @@
       Nclick = length(iloc$x)
       
       if(is.null(iloc$x)) { return(zloc) }
-      K =  whichbutt(iloc ,buttons)
+      K =  RPMG::whichbutt(iloc ,buttons)
       
       
       

@@ -2,7 +2,7 @@
 function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,  ZLIM=c(0, 30), STA=NULL, TOPO=NULL,  STDLAB=c("DONE", "QUIT") )
   {
 
-    if(missing(COL)) { COL=tomo.colors(100) }
+    if(missing(COL)) { COL=TOMO.colors(100) }
     if(missing(LIM)) { LIM=NULL }
     if(missing(MAP)) { MAP=NULL }
     if(missing(MAPLIM)) { MAPLIM=NULL }
@@ -27,7 +27,7 @@ function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,  ZLIM=c(0, 30), STA=NUL
     
     ilay = 1
     NLAY = length(MOD$MOD)
-    MESHXY = meshgrid(MOD$x, MOD$y)
+    MESHXY = RPMG::meshgrid(MOD$x, MOD$y)
     PTSXY = cbind(as.vector(MESHXY$x), as.vector(MESHXY$y) )
     
 ### pltomo(MOD$x,MOD$y,MOD$MOD,ilay, tomocolors, zlim=c(-15, 15))
@@ -48,7 +48,7 @@ function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,  ZLIM=c(0, 30), STA=NUL
     upar = par("usr")
 
     
-    buttons = rowBUTTONS(BLABS, col=colabs, pch=pchlabs)
+    buttons = RPMG::rowBUTTONS(BLABS, col=colabs, pch=pchlabs)
 
     MAINdev = dev.cur()
     dev.set( MAINdev)
@@ -62,7 +62,7 @@ function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,  ZLIM=c(0, 30), STA=NUL
     Nclick = length(zloc$x)
     
     if(is.null(iloc$x)) { return(0) }
-    K = whichbutt(iloc ,buttons)
+    K = RPMG::whichbutt(iloc ,buttons)
   
   sloc = zloc
 
@@ -78,7 +78,7 @@ function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,  ZLIM=c(0, 30), STA=NUL
       
       if(K[Nclick] == match("DONE", BLABS, nomatch = NOLAB))
         {
-          buttons = rowBUTTONS(BLABS, col=rep(grey(.8), length(BLABS)), pch=rep("NULL", length(BLABS)))
+          buttons = RPMG::rowBUTTONS(BLABS, col=rep(grey(.8), length(BLABS)), pch=rep("NULL", length(BLABS)))
           title("Return to Calling Program")
           
           
@@ -88,7 +88,7 @@ function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,  ZLIM=c(0, 30), STA=NUL
       if(K[Nclick] == match("QUIT", BLABS, nomatch = NOLAB))
         {
           
-          buttons = rowBUTTONS(BLABS, col=rep(grey(.8), length(BLABS)), pch=rep("NULL", length(BLABS)))
+          buttons = RPMG::rowBUTTONS(BLABS, col=rep(grey(.8), length(BLABS)), pch=rep("NULL", length(BLABS)))
           title("Return to Calling Program")
           
           return(NULL)
@@ -101,7 +101,7 @@ function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,  ZLIM=c(0, 30), STA=NUL
             FANCY.TOMO(MOD, ilay, COL=COL, LIM=LIM, MAP=MAP, MAPLIM=MAPLIM, STA=STA, TIT = NULL )
             upar = par("usr")
 
-            buttons = rowBUTTONS(BLABS, col=colabs, pch=pchlabs)
+            buttons = RPMG::rowBUTTONS(BLABS, col=colabs, pch=pchlabs)
             zloc = list(x=NULL, y=NULL)
      
 
@@ -114,7 +114,7 @@ function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,  ZLIM=c(0, 30), STA=NUL
           FANCY.TOMO(MOD, ilay, COL=COL, LIM=LIM, MAP=MAP, MAPLIM=MAPLIM, STA=STA, TIT = NULL)
           upar = par("usr")
 
-          buttons = rowBUTTONS(BLABS, col=colabs, pch=pchlabs)
+          buttons = RPMG::rowBUTTONS(BLABS, col=colabs, pch=pchlabs)
           zloc = list(x=NULL, y=NULL)
         }
 
@@ -127,7 +127,7 @@ function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,  ZLIM=c(0, 30), STA=NUL
           FANCY.TOMO(MOD, ilay, COL=COL, LIM=LIM, MAP=MAP, MAPLIM=MAPLIM, STA=STA)
           upar = par("usr")
 
-          buttons = rowBUTTONS(BLABS, col=colabs, pch=pchlabs)
+          buttons = RPMG::rowBUTTONS(BLABS, col=colabs, pch=pchlabs)
           zloc = list(x=NULL, y=NULL)
 
         }
@@ -141,7 +141,7 @@ function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,  ZLIM=c(0, 30), STA=NUL
           FANCY.TOMO(MOD, ilay, COL=COL, LIM=LIM, MAP=MAP, MAPLIM=MAPLIM, STA=STA)
           upar = par("usr")
 
-          buttons = rowBUTTONS(BLABS, col=colabs, pch=pchlabs)
+          buttons = RPMG::rowBUTTONS(BLABS, col=colabs, pch=pchlabs)
           zloc = list(x=NULL, y=NULL)
 
         }
@@ -151,7 +151,7 @@ function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,  ZLIM=c(0, 30), STA=NUL
           NKLIX = length(zloc$x)-1
           ex = zloc$x[1:NKLIX]
           why = zloc$y[1:NKLIX]
-          LL = XY.GLOB(ex, why, proj)
+          LL = GEOmap::XY.GLOB(ex, why, proj)
 
           kx = floor(ex/MOD$A$dx)
           ky = floor(why/MOD$A$dy)
@@ -171,10 +171,10 @@ function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,  ZLIM=c(0, 30), STA=NUL
           NKLIX = length(zloc$x)-1
           ex = zloc$x[1:NKLIX]
           why = zloc$y[1:NKLIX]
-          LL = XY.GLOB(ex, why, proj)
+          LL = GEOmap::XY.GLOB(ex, why, proj)
           polygon(ex, why, border='white')
           mypoly = cbind(ex, why)
-          myarea = areapl(mypoly)
+          myarea = splancs::areapl(mypoly)
           print(paste(sep=' ', "AREA=",myarea))
           zloc = list(x=NULL, y=NULL)
         }
@@ -185,7 +185,7 @@ function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,  ZLIM=c(0, 30), STA=NUL
           NKLIX = length(zloc$x)-1
           ex = zloc$x[1:NKLIX]
           why = zloc$y[1:NKLIX]
-          LL = XY.GLOB(ex, why, proj)
+          LL = GEOmap::XY.GLOB(ex, why, proj)
           polygon(ex, why, border='white')
 
           
@@ -193,10 +193,10 @@ function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,  ZLIM=c(0, 30), STA=NUL
 
          
           
-          INP =  inpip(PTSXY,mypoly )
+          INP =  splancs::inpip(PTSXY,mypoly )
 
           points(PTSXY[INP, 1] , PTSXY[INP, 2], pch='.', col='white')
-          myarea = areapl(mypoly)
+          myarea = splancs::areapl(mypoly)
 
           IM = MOD$MOD[[ilay]]
 
@@ -207,7 +207,7 @@ function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,  ZLIM=c(0, 30), STA=NUL
 
           SVAL = sum(Ival)
           
-          statval = jstats(Ival)
+          statval = RSEIS::jstats(Ival)
           
           print(paste(sep=' ', "AREA=",myarea))
           print(paste(sep=' ', "SUM=", SVAL))
@@ -225,7 +225,7 @@ function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,  ZLIM=c(0, 30), STA=NUL
           ex = zloc$x[1:NKLIX]
           why = zloc$y[1:NKLIX]
           n = length(ex)
-          LL = XY.GLOB(ex, why, proj)
+          LL = GEOmap::XY.GLOB(ex, why, proj)
           ##   check that n is even
            ##  print(paste(sep=' ', n, n%%2))
           if( identical(n%%2, 0))
@@ -254,7 +254,7 @@ function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,  ZLIM=c(0, 30), STA=NUL
           ex = zloc$x[1:NKLIX]
           why = zloc$y[1:NKLIX]
           n = length(ex)
-          LL = XY.GLOB(ex, why, proj)
+          LL = GEOmap::XY.GLOB(ex, why, proj)
           ##   check that n is even
           ##   print(paste(sep=' ', n, n%%2))
           if( identical(n%%2, 0))
@@ -285,7 +285,7 @@ function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,  ZLIM=c(0, 30), STA=NUL
 
                  dev.new()
  
-                   XSEC.drive(MOD, x1[jsec], y1[jsec], x2[jsec], y2[jsec] , zmax=zmax, COL=tomo.colors(100), LIM=LIM, STA=STA, TOP=TOPTRACE)
+                   XSEC.drive(MOD, x1[jsec], y1[jsec], x2[jsec], y2[jsec] , zmax=zmax, COL=TOMO.colors(100), LIM=LIM, STA=STA, TOP=TOPTRACE)
                  }
 
                
@@ -308,7 +308,7 @@ function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,  ZLIM=c(0, 30), STA=NUL
       Nclick = length(iloc$x)
       
       if(is.null(iloc$x)) { return(zloc) }
-      K =  whichbutt(iloc ,buttons)
+      K =  RPMG::whichbutt(iloc ,buttons)
         
     
       

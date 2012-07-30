@@ -39,7 +39,7 @@ Model I/O:
 
 Utilities:
 \describe{
-\item{tomo.colors}{color palette for tomography}
+\item{TOMO.colors}{color palette for tomography}
 \item{TOMOinfo}{Information about the tomographic layers}
 
 \item{MOD2VEC}{Convert 3D model to single long vector}

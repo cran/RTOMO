@@ -5,7 +5,9 @@
   Plot Tomographic Cross Section (non-interactive)
 }
 \usage{
-TOMOXSEC(MOD, x1, y1, x2, y2, zmax = 100, depth = c(-25, 0), COL = rainbow(100), LIM = NULL, STA = NULL, PLOT = TRUE)
+TOMOXSEC(MOD, x1, y1, x2, y2, zmax = 100,
+depth = c(-25, 0), COL = rainbow(100), LIM = NULL,
+STA = NULL, PLOT = TRUE)
 }
 \arguments{
   \item{MOD}{Model List}
@@ -38,7 +40,8 @@ L=list()
 L$x=c( 4.21883807095,23.99298268599)
 L$y=c(15.8014536521,11.4951858659)
 
-XZ = TOMOXSEC(HELMOD, L$x[1], L$y[1], L$x[2],  L$y[2] , zmax=20, COL=tomo.colors(100), PLOT=TRUE)
+XZ = TOMOXSEC(HELMOD, L$x[1], L$y[1], L$x[2],  L$y[2] ,
+zmax=20, COL=TOMO.colors(100), PLOT=TRUE)
 
 
 }

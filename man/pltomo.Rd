@@ -37,7 +37,7 @@ This routine is used by SHOWTOMO
 \examples{
 
 data(HELMOD)
- pltomo(HELMOD$x,HELMOD$y,HELMOD$MOD,5, col=tomo.colors(100), zlim=NULL,  bkgr="white" )
+ pltomo(HELMOD$x,HELMOD$y,HELMOD$MOD,5, col=TOMO.colors(100), zlim=NULL,  bkgr="white" )
       
 
 

@@ -42,16 +42,16 @@ function(name)
     ###  image(x,y,MOD[[5]], col=tomocolors)
 
   ###     DAPROJ = PROJ.DATA
-   ###    setPROJ(type=2, LAT0=A$lat, LON0=A$lon )
+   ###    GEOmap::setPROJ(type=2, LAT0=A$lat, LON0=A$lon )
 
-  ###     LL = XY.GLOB( x , rep(0,length(x)) )
+  ###     LL = GEOmap::XY.GLOB( x , rep(0,length(x)) )
   ###     lons = LL$lon
-  ###     LL = XY.GLOB( rep(0,length(y)) , y )
+  ###     LL = GEOmap::XY.GLOB( rep(0,length(y)) , y )
   ###     lats = LL$lat
 
    ###    PROJ.DATA<<-DAPROJ
 
-  ###     mx = GLOB.XY(A$lat, A$lon  )
+  ###     mx = GEOmap::GLOB.XY(A$lat, A$lon  )
   ###     kmx = mx$x+x
    ###    kmy = mx$y+y
 

@@ -5,7 +5,9 @@
   Plot a cross section of a tomogram and interact
 }
 \usage{
-XSEC.drive(MOD, x1, y1, x2, y2, zmax = 100, COL = tomo.colors(100), LIM = NULL, STA = NULL, TOP =NULL , STDLAB = c("DONE", "QUIT"))
+XSEC.drive(MOD, x1, y1, x2, y2, zmax = 100,
+COL = TOMO.colors(100), LIM = NULL, STA = NULL,
+ TOP =NULL , STDLAB = c("DONE", "QUIT"))
 }
 \arguments{
   \item{MOD}{Model List}

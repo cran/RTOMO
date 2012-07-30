@@ -1,2 +1,6 @@
 # Export all names
 exportPattern(".")
+import(RPMG)
+import(GEOmap)
+importFrom(RSEIS, addtix)
+importFrom(splancs, inpip,areapl )
