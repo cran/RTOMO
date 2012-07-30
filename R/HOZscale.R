@@ -48,7 +48,7 @@ function(z, col, units="", SIDE=1, s1=.4, s2=0.95)
     y1 = LU$y[1]
     y2 =  LU$y[2]
       
-    rect(x1,y1,x2,y2,  col=col, xpd = TRUE, border=-1)
+    rect(x1,y1,x2,y2,  col=col, xpd = TRUE, border=NA)
     rlab = paste(sep=" ", format.default(rng[2], digits=3), units)
     text(LU$x[2]+BX, (y1+y2)/2, labels=rlab, adj=0, xpd = TRUE)
     text(LU$x[1]-BX/2,  (y1+y2)/2, labels=format.default(rng[1], digits=3), adj=1, xpd = TRUE)
