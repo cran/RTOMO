@@ -1,12 +1,12 @@
-\name{TOMO.colors}
-\alias{TOMO.colors}
+\name{tomo.colors}
+\alias{tomo.colors}
 
 \title{Tomography Colors}
 \description{
  Color Palette ranging from red to blue through black.
 }
 \usage{
-TOMO.colors(n, alpha = 1)
+tomo.colors(n, alpha = 1)
 }
 
 \arguments{
@@ -22,7 +22,7 @@ color palette
 
 \seealso{rainbow, colors, hsv}
 \examples{
-TOMO.colors(25, alpha = 1)
+tomo.colors(25, alpha = 1)
 }
 
 \keyword{misc}

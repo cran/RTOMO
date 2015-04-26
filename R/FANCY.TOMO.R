@@ -7,7 +7,7 @@ function(MOD, i, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,
 
     
 
-    if(missing(COL)) { COL=TOMO.colors(100) }
+    if(missing(COL)) { COL=tomo.colors(100) }
     if(missing(LIM)) { LIM=NULL }
     if(missing(MAP)) { MAP=NULL }
     if(missing(MAPLIM)) { MAPLIM=NULL }

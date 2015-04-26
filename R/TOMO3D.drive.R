@@ -2,7 +2,7 @@
 function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,  ZLIM=c(0, 30), STA=NULL, TOPO=NULL,  STDLAB=c("DONE", "QUIT") )
   {
 
-    if(missing(COL)) { COL=TOMO.colors(100) }
+    if(missing(COL)) { COL=tomo.colors(100) }
     if(missing(LIM)) { LIM=NULL }
     if(missing(MAP)) { MAP=NULL }
     if(missing(MAPLIM)) { MAPLIM=NULL }
@@ -27,7 +27,7 @@ function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,  ZLIM=c(0, 30), STA=NUL
     
     ilay = 1
     NLAY = length(MOD$MOD)
-    MESHXY = RPMG::meshgrid(MOD$x, MOD$y)
+    MESHXY = meshgrid(MOD$x, MOD$y)
     PTSXY = cbind(as.vector(MESHXY$x), as.vector(MESHXY$y) )
     
 ### pltomo(MOD$x,MOD$y,MOD$MOD,ilay, tomocolors, zlim=c(-15, 15))
@@ -207,7 +207,7 @@ function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,  ZLIM=c(0, 30), STA=NUL
 
           SVAL = sum(Ival)
           
-          statval = RSEIS::jstats(Ival)
+          statval = jstats(Ival)
           
           print(paste(sep=' ', "AREA=",myarea))
           print(paste(sep=' ', "SUM=", SVAL))
@@ -285,7 +285,7 @@ function(MOD, COL=NULL, LIM=NULL, MAP=NULL, MAPLIM=NULL,  ZLIM=c(0, 30), STA=NUL
 
                  dev.new()
  
-                   XSEC.drive(MOD, x1[jsec], y1[jsec], x2[jsec], y2[jsec] , zmax=zmax, COL=TOMO.colors(100), LIM=LIM, STA=STA, TOP=TOPTRACE)
+                   XSEC.drive(MOD, x1[jsec], y1[jsec], x2[jsec], y2[jsec] , zmax=zmax, COL=tomo.colors(100), LIM=LIM, STA=STA, TOP=TOPTRACE)
                  }
 
                

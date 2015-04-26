@@ -1,4 +1,4 @@
-`TOMO.colors` <-
+`tomo.colors` <-
 function(n, alpha = 1)
   {
     if ((n <- as.integer(n[1])) > 0)

@@ -2,7 +2,7 @@
 function(x,y,MOD,i, colmap=rainbow(100), zlim=NULL, bkgr="DarkSlateGray4", ...)
   {
     
-    if(missing(colmap)) { colmap=TOMO.colors(100) }
+    if(missing(colmap)) { colmap=tomo.colors(100) }
     if(missing(bkgr)) { bkgr="DarkSlateGray4" }
     if(missing(zlim)) { zlim=NULL }
 

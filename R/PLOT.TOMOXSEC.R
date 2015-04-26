@@ -3,7 +3,7 @@ function(XZSEC , depth=c(-25, 0) , COL=NULL, LIM=NULL, STA=NULL, ADD=FALSE)
   {
     ##require(GEOmap)
     
-    if(missing(COL)) { COL=TOMO.colors(100) }
+    if(missing(COL)) { COL=tomo.colors(100) }
     if(missing(LIM)) { LIM=NULL }
     if(missing(STA)) { STA=NULL }
     if(missing(depth)) { depth=range(XZSEC$y) }
@@ -21,8 +21,8 @@ function(XZSEC , depth=c(-25, 0) , COL=NULL, LIM=NULL, STA=NULL, ADD=FALSE)
 
 ## abline(v=XZSEC$x, h=XZSEC$y)
 
-    MXY1 = RPMG::meshgrid(XZSEC$x[1:(length(XZSEC$x)-1)], XZSEC$y[1:(length(XZSEC$y)-1)])
-    MXY2 = RPMG::meshgrid(XZSEC$x[2:(length(XZSEC$x))], XZSEC$y[2:(length(XZSEC$y))])
+    MXY1 = meshgrid(XZSEC$x[1:(length(XZSEC$x)-1)], XZSEC$y[1:(length(XZSEC$y)-1)])
+    MXY2 = meshgrid(XZSEC$x[2:(length(XZSEC$x))], XZSEC$y[2:(length(XZSEC$y))])
 ##  rect( MXY1$x,  MXY1$y,  MXY2$x,  MXY2$y )
 
     if(is.null(LIM))

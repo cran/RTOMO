@@ -15,7 +15,7 @@ function(x1, y1, x2, y2, xo, yo, NODES=FALSE, PLOT=FALSE)
     dy = diff(yo)[1]
 
 
-  ####  M = RPMG::meshgrid(xo, yo)
+  ####  M = meshgrid(xo, yo)
 
     if(NODES)
       {
@@ -82,7 +82,7 @@ function(x1, y1, x2, y2, xo, yo, NODES=FALSE, PLOT=FALSE)
 
     if(PLOT==TRUE)
       {
-        blues = RPMG::shade.col(100, acol=c(1,1,1) , bcol= as.vector(col2rgb("lightblue")/255))
+        blues = shade.col(100, acol=c(1,1,1) , bcol= as.vector(col2rgb("lightblue")/255))
 
         plot(xo, yo, type='n')
         segments(LX, rep(min(LY), length=length(LX)), LX, rep(max(LY), length=length(LX)))

@@ -2,7 +2,7 @@
 function(MOD, colmap=topo.colors(100),  zlim=NULL,  MAP=NULL, I=1, J=2, bkgr="white" ,
          linelty=1, linelwd=1, ptpch=".", ptcex=1 )
 {
-  if(missing(colmap)) { colmap=TOMO.colors(100) }
+  if(missing(colmap)) { colmap=tomo.colors(100) }
   if(missing(MAP)) { MAP=NULL }
   if(missing(I)) { I=1 }
   if(missing(J)) { J=length(MOD$MOD) }
@@ -32,7 +32,7 @@ function(MOD, colmap=topo.colors(100),  zlim=NULL,  MAP=NULL, I=1, J=2, bkgr="wh
       
       pltomo(MOD$x,MOD$y,MOD$MOD,i, colmap=colmap, zlim=zlim,  bkgr= bkgr )
       
-      ##  image(xo, yo, TM1$MOD[[i]], col=TOMO.colors(100), axes=FALSE, ann=FALSE) 
+      ##  image(xo, yo, TM1$MOD[[i]], col=tomo.colors(100), axes=FALSE, ann=FALSE) 
 
       
       text(MOD$x[1],MOD$y[1], labels=paste(sep=" : ", paste(sep="", "LAY=", i) , paste(sep="", "Z=",MOD$D[i])), adj=c(0,0) ,xpd=TRUE, font=2)

@@ -15,7 +15,7 @@ function(xo, yo, ztop, x, y, z, r, v, bg )
     dx = xo[2]-xo[1]
     dy = yo[2]-yo[1]
     
-    M = RPMG::meshgrid(xo, yo)
+    M = meshgrid(xo, yo)
 
     N = length(ztop)
 
