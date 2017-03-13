@@ -4,3 +4,10 @@ import(RPMG)
 import(GEOmap)
 importFrom(RSEIS, addtix)
 importFrom(splancs, inpip,areapl )
+importFrom("grDevices", "boxplot.stats", "col2rgb", "dev.cur",
+             "dev.new", "dev.set", "grey", "hsv", "rainbow", "rgb",
+             "topo.colors")
+importFrom("graphics", "box", "boxplot", "contour", "image", "lines",
+             "locator", "par", "plot", "points", "polygon", "rect",
+             "segments", "text", "title")
+importFrom("stats", "lm", "var")
